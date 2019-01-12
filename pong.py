@@ -103,7 +103,17 @@ while True:
     # reverse direction of movement
     ball.dy *= -1
 
+  # bottom border
   if ball.ycor() < -290:
     ball.sety(-290)
-    # reverse direction of movement
     ball.dy *= -1
+
+  # confirm that ball is beyong paddle  
+  if ball.xcor() > 390:
+    # set ball x, y coordinates to zero to restart game
+    ball.goto(0, 0)
+    ball.dx *= -1
+
+  if ball.xcor() < -390:
+    ball.goto(0, 0)
+    ball.dx *= -1
