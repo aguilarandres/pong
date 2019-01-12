@@ -48,7 +48,27 @@ ball.penup()
 ball.goto(0, 0)
 # END Ball
 
+# Function
+
+def paddle_a_up():
+    # determine current Y coordinate
+    y = paddle_a.ycor()
+    # add 20px to the Y coordinate
+    paddle_a.sety(y + 20)
+
+def paddle_a_down():
+    y = paddle_a.ycor()
+    paddle_a.sety(y - 20)
+
+# Keyboard binding
+# listen for keyboard input
+window.listen()
+# call paddle_a_up() when "w" key is pressed
+window.onkeypress(paddle_a_up, "w")
+# call paddle_a_up() when "s" key is pressed
+window.onkeypress(paddle_a_down, "s")
+
 # main game loop
 while True:
-  # update screen every time loop runs
+    # update screen every time loop runs
   window.update()
