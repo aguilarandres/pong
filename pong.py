@@ -48,7 +48,7 @@ ball.penup()
 ball.goto(0, 0)
 # move ball by n pixels
 ball.dx = 0.10
-ball.dy = 0.10
+ball.dy = -0.10
 # END Ball
 
 # Function
@@ -96,8 +96,14 @@ while True:
   ball.sety(ball.ycor() + ball.dy)
 
   # border checking
+
+  # top border
   if ball.ycor() > 290:
     ball.sety(290)
     # reverse direction of movement
     ball.dy *= -1
 
+  if ball.ycor() < -290:
+    ball.sety(-290)
+    # reverse direction of movement
+    ball.dy *= -1
