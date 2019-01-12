@@ -10,7 +10,7 @@ window.bgcolor("black")
 window.setup(width=800, height=600)
 window.tracer(0)
 
-# Paddle A
+# START Paddle A
 
 # turtle object
 paddle_a = turtle.Turtle()
@@ -28,7 +28,7 @@ paddle_a.goto(-350, 0)
 
 # END Paddle A
 
-# Paddle B
+# START Paddle B
 paddle_b = turtle.Turtle()
 paddle_b.speed(0)
 paddle_b.shape("square")
@@ -38,7 +38,7 @@ paddle_b.penup()
 paddle_b.goto(350, 0)
 # END Paddle B
 
-# Ball
+# START Ball
 
 
 # main game loop
