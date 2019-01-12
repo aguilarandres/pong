@@ -4,10 +4,13 @@
 # Turtle graphics for Tkinter (Tk)
 import turtle
 
+window_width  = 800
+window_height = 600
+
 window = turtle.Screen()
 window.title = ("Pong by @TokyoEdTech")
 window.bgcolor("black")
-window.setup(width=800, height=600)
+window.setup(window_width, window_height)
 window.tracer(0)
 
 # START Paddle A
@@ -108,7 +111,7 @@ while True:
     ball.sety(-290)
     ball.dy *= -1
 
-  # confirm that ball is beyong paddle  
+  # confirm that ball is beyong paddle
   if ball.xcor() > 390:
     # set ball x, y coordinates to zero to restart game
     ball.goto(0, 0)
