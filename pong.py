@@ -46,6 +46,9 @@ ball.color("white")
 ball.penup()
 # center of screen
 ball.goto(0, 0)
+# move ball by n pixels
+ball.dx = 0.10
+ball.dy = 0.10
 # END Ball
 
 # Function
@@ -71,6 +74,7 @@ def paddle_b_down():
     paddle_b.sety(y - 20)
 
 # Keyboard binding
+
 # listen for keyboard input
 window.listen()
 # call paddle_a_up() when "w" key is pressed
@@ -81,7 +85,13 @@ window.onkeypress(paddle_a_down, "s")
 window.onkeypress(paddle_b_up, "Up")
 # call paddle_a_up() when Down-arrow key is pressed
 window.onkeypress(paddle_b_down, "Down")
+
 # main game loop
 while True:
     # update screen every time loop runs
   window.update()
+
+  # move ball
+  ball.setx(ball.xcor() + ball.dx)
+  ball.sety(ball.ycor() + ball.dy)
+
