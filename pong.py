@@ -113,7 +113,7 @@ while True:
 
   # confirm that ball is beyong paddle
   if ball.xcor() > 390:
-    # set ball x, y coordinates to zero to restart game
+      # set ball x, y coordinates to zero to restart game
     ball.goto(0, 0)
     ball.dx *= -1
 
@@ -122,7 +122,14 @@ while True:
     ball.dx *= -1
 
   # Paddle and ball collisions
+
+  # Paddle P1
+  if (ball.xcor() < -340 and ball.xcor() > -350) and \
+  (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() - 40):
+      ball.setx(-340)
+      ball.dx *= -1
+  # Paddle P2
   if (ball.xcor() > 340 and ball.xcor() < 350) and \
-          (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 40):
-    ball.setx(340)
-    ball.dx *= -1
+  (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 40):
+      ball.setx(340)
+      ball.dx *= -1
