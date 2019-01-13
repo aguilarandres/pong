@@ -84,9 +84,9 @@ window.listen()
 window.onkeypress(paddle_a_up, "w")
 # call paddle_a_up() when "s" key is pressed
 window.onkeypress(paddle_a_down, "s")
-# call paddle_a_up() when Up-arrow key is pressed
+# call paddle_b_up() when Up-arrow key is pressed
 window.onkeypress(paddle_b_up, "Up")
-# call paddle_a_up() when Down-arrow key is pressed
+# call paddle_b_up() when Down-arrow key is pressed
 window.onkeypress(paddle_b_down, "Down")
 
 # main game loop
