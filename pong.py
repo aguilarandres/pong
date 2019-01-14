@@ -24,7 +24,7 @@ window.bgcolor("black")
 window.setup(window_width, window_height)
 window.tracer(0)
 
-# START Paddle A
+# START Paddle P1
 
 # turtle object
 paddle_p1 = turtle.Turtle()
@@ -40,9 +40,9 @@ paddle_p1.penup()
 # set x y coordinates goto(x, y)
 paddle_p1.goto(p1_xcor, 0)
 
-# END Paddle A
+# END Paddle P1
 
-# START Paddle B
+# START Paddle P2
 paddle_p2 = turtle.Turtle()
 paddle_p2.speed(0)
 paddle_p2.shape("square")
@@ -50,7 +50,7 @@ paddle_p2.shapesize(stretch_wid=5, stretch_len=1)
 paddle_p2.color("white")
 paddle_p2.penup()
 paddle_p2.goto(p2_xcor, 0)
-# END Paddle B
+# END Paddle P2
 
 # START Ball
 ball = turtle.Turtle()
