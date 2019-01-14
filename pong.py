@@ -18,6 +18,9 @@ font_style = "normal"
 p1_xcor = -350
 p2_xcor = 350
 
+# number of pixels to shift paddle by
+paddle_shift = 20
+
 window = turtle.Screen()
 window.title = ("Pong by @TokyoEdTech")
 window.bgcolor("black")
@@ -83,22 +86,22 @@ pen.write("Player 1: {} | Player 2: {}".format(score_p1, score_p2), \
 def paddle_p1_up():
     # determine current Y coordinate
     y = paddle_p1.ycor()
-    # add 20px to the Y coordinate
-    paddle_p1.sety(y + 20)
+    # add n pixels to the Y coordinate
+    paddle_p1.sety(y + paddle_shift)
 
 def paddle_p1_down():
     y = paddle_p1.ycor()
-    paddle_p1.sety(y - 20)
+    paddle_p1.sety(y - paddle_shift)
 
 def paddle_p2_up():
     # determine current Y coordinate
     y = paddle_p2.ycor()
-    # add 20px to the Y coordinate
-    paddle_p2.sety(y + 20)
+    # add n pixels to the Y coordinate
+    paddle_p2.sety(y + paddle_shift)
 
 def paddle_p2_down():
     y = paddle_p2.ycor()
-    paddle_p2.sety(y - 20)
+    paddle_p2.sety(y - paddle_shift)
 
 # END Functions
 
