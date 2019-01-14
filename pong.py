@@ -7,6 +7,9 @@ import turtle
 window_width  = 800
 window_height = 600
 
+score_p1 = 0
+score_p2 = 0
+
 window = turtle.Screen()
 window.title = ("Pong by @TokyoEdTech")
 window.bgcolor("black")
@@ -54,7 +57,20 @@ ball.dx = 0.10
 ball.dy = -0.10
 # END Ball
 
-# Function
+# START Pen
+pen = turtle.Turtle()
+pen.speed(0)
+pen.color("white")
+pen.penup()
+# hide turtle so only written text is displayed
+pen.hideturtle()
+pen.goto(0, 260)
+pen.write("Player 1: {} | Player 2: {}".format(score_p1, score_p2), \
+    align="center", font=("Courier", 24, "normal"))
+
+# END Pen 
+
+# START Functions
 
 def paddle_a_up():
     # determine current Y coordinate
@@ -75,6 +91,8 @@ def paddle_b_up():
 def paddle_b_down():
     y = paddle_b.ycor()
     paddle_b.sety(y - 20)
+
+# END Functions
 
 # Keyboard binding
 
@@ -111,15 +129,24 @@ while True:
     ball.sety(-290)
     ball.dy *= -1
 
-  # confirm that ball is beyong paddle
+  # confirm that ball is off screen
   if ball.xcor() > 390:
       # set ball x, y coordinates to zero to restart game
     ball.goto(0, 0)
     ball.dx *= -1
+    score_p1 += 1
+    pen.clear()
+    pen.write("Player 1: {} | Player 2: {}".format(score_p1, score_p2), \
+        align="center", font=("Courier", 24, "normal"))
 
   if ball.xcor() < -390:
     ball.goto(0, 0)
     ball.dx *= -1
+    score_p2 +=1
+    pen.clear()
+    pen.write("Player 1: {} | Player 2: {}".format(score_p1, score_p2), \
+        align="center", font=("Courier", 24, "normal"))
+
 
   # Paddle and ball collisions
 
