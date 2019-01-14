@@ -11,6 +11,10 @@ window_height = 600
 score_p1 = 0
 score_p2 = 0
 
+font_type  = "Ubuntu Mono"
+font_size  = 24
+font_style = "normal"
+
 window = turtle.Screen()
 window.title = ("Pong by @TokyoEdTech")
 window.bgcolor("black")
@@ -67,9 +71,9 @@ pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
 pen.write("Player 1: {} | Player 2: {}".format(score_p1, score_p2), \
-    align="center", font=("Courier", 24, "normal"))
+    align="center", font=(font_type, font_size, font_style))
 
-# END Pen 
+# END Pen
 
 # START Functions
 
@@ -140,7 +144,7 @@ while True:
     score_p1 += 1
     pen.clear()
     pen.write("Player 1: {} | Player 2: {}".format(score_p1, score_p2), \
-        align="center", font=("Courier", 24, "normal"))
+        align="center", font=(font_type, font_size, font_style))
 
   if ball.xcor() < -390:
     ball.goto(0, 0)
@@ -148,7 +152,7 @@ while True:
     score_p2 +=1
     pen.clear()
     pen.write("Player 1: {} | Player 2: {}".format(score_p1, score_p2), \
-        align="center", font=("Courier", 24, "normal"))
+        align="center", font=(font_type, font_size, font_style))
 
 
   # Paddle and ball collisions
