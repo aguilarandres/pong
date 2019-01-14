@@ -15,6 +15,9 @@ font_type  = "Ubuntu Mono"
 font_size  = 24
 font_style = "normal"
 
+p1_xcor = -350
+p2_xcor = 350
+
 window = turtle.Screen()
 window.title = ("Pong by @TokyoEdTech")
 window.bgcolor("black")
@@ -35,7 +38,7 @@ paddle_p1.color("white")
 # Pull the pen up - no drawing when moving
 paddle_p1.penup()
 # set x y coordinates goto(x, y)
-paddle_p1.goto(-350, 0)
+paddle_p1.goto(p1_xcor, 0)
 
 # END Paddle A
 
@@ -46,7 +49,7 @@ paddle_p2.shape("square")
 paddle_p2.shapesize(stretch_wid=5, stretch_len=1)
 paddle_p2.color("white")
 paddle_p2.penup()
-paddle_p2.goto(350, 0)
+paddle_p2.goto(p2_xcor, 0)
 # END Paddle B
 
 # START Ball
@@ -158,13 +161,13 @@ while True:
   # Paddle and ball collisions
 
   # Paddle P1
-  if (ball.xcor() < -340 and ball.xcor() > -350) and \
+  if (ball.xcor() < -340 and ball.xcor() > p1_xcor) and \
   (ball.ycor() < paddle_p1.ycor() + 40 and ball.ycor() > paddle_p1.ycor() - 40):
       ball.setx(-340)
       ball.dx *= -1
       os.system("aplay blip.wav&")
   # Paddle P2
-  if (ball.xcor() > 340 and ball.xcor() < 350) and \
+  if (ball.xcor() > 340 and ball.xcor() < p2_xcor) and \
   (ball.ycor() < paddle_p2.ycor() + 40 and ball.ycor() > paddle_p2.ycor() - 40):
       ball.setx(340)
       ball.dx *= -1
