@@ -24,29 +24,29 @@ window.tracer(0)
 # START Paddle A
 
 # turtle object
-paddle_a = turtle.Turtle()
+paddle_p1 = turtle.Turtle()
 # annimation speed set to maximum
-paddle_a.speed(0)
+paddle_p1.speed(0)
 # default square 20px by 20px
-paddle_a.shape("square")
+paddle_p1.shape("square")
 # stretch shape to emulate pong paddle
-paddle_a.shapesize(stretch_wid=5, stretch_len=1)
-paddle_a.color("white")
+paddle_p1.shapesize(stretch_wid=5, stretch_len=1)
+paddle_p1.color("white")
 # Pull the pen up - no drawing when moving
-paddle_a.penup()
+paddle_p1.penup()
 # set x y coordinates goto(x, y)
-paddle_a.goto(-350, 0)
+paddle_p1.goto(-350, 0)
 
 # END Paddle A
 
 # START Paddle B
-paddle_b = turtle.Turtle()
-paddle_b.speed(0)
-paddle_b.shape("square")
-paddle_b.shapesize(stretch_wid=5, stretch_len=1)
-paddle_b.color("white")
-paddle_b.penup()
-paddle_b.goto(350, 0)
+paddle_p2 = turtle.Turtle()
+paddle_p2.speed(0)
+paddle_p2.shape("square")
+paddle_p2.shapesize(stretch_wid=5, stretch_len=1)
+paddle_p2.color("white")
+paddle_p2.penup()
+paddle_p2.goto(350, 0)
 # END Paddle B
 
 # START Ball
@@ -77,25 +77,25 @@ pen.write("Player 1: {} | Player 2: {}".format(score_p1, score_p2), \
 
 # START Functions
 
-def paddle_a_up():
+def paddle_p1_up():
     # determine current Y coordinate
-    y = paddle_a.ycor()
+    y = paddle_p1.ycor()
     # add 20px to the Y coordinate
-    paddle_a.sety(y + 20)
+    paddle_p1.sety(y + 20)
 
-def paddle_a_down():
-    y = paddle_a.ycor()
-    paddle_a.sety(y - 20)
+def paddle_p1_down():
+    y = paddle_p1.ycor()
+    paddle_p1.sety(y - 20)
 
-def paddle_b_up():
+def paddle_p2_up():
     # determine current Y coordinate
-    y = paddle_b.ycor()
+    y = paddle_p2.ycor()
     # add 20px to the Y coordinate
-    paddle_b.sety(y + 20)
+    paddle_p2.sety(y + 20)
 
-def paddle_b_down():
-    y = paddle_b.ycor()
-    paddle_b.sety(y - 20)
+def paddle_p2_down():
+    y = paddle_p2.ycor()
+    paddle_p2.sety(y - 20)
 
 # END Functions
 
@@ -103,14 +103,14 @@ def paddle_b_down():
 
 # listen for keyboard input
 window.listen()
-# call paddle_a_up() when "w" key is pressed
-window.onkeypress(paddle_a_up, "w")
-# call paddle_a_up() when "s" key is pressed
-window.onkeypress(paddle_a_down, "s")
-# call paddle_b_up() when Up-arrow key is pressed
-window.onkeypress(paddle_b_up, "Up")
-# call paddle_b_up() when Down-arrow key is pressed
-window.onkeypress(paddle_b_down, "Down")
+# call paddle_p1_up() when "w" key is pressed
+window.onkeypress(paddle_p1_up, "w")
+# call paddle_p1_up() when "s" key is pressed
+window.onkeypress(paddle_p1_down, "s")
+# call paddle_p2_up() when Up-arrow key is pressed
+window.onkeypress(paddle_p2_up, "Up")
+# call paddle_p2_up() when Down-arrow key is pressed
+window.onkeypress(paddle_p2_down, "Down")
 
 # main game loop
 while True:
@@ -159,13 +159,13 @@ while True:
 
   # Paddle P1
   if (ball.xcor() < -340 and ball.xcor() > -350) and \
-  (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() - 40):
+  (ball.ycor() < paddle_p1.ycor() + 40 and ball.ycor() > paddle_p1.ycor() - 40):
       ball.setx(-340)
       ball.dx *= -1
       os.system("aplay blip.wav&")
   # Paddle P2
   if (ball.xcor() > 340 and ball.xcor() < 350) and \
-  (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 40):
+  (ball.ycor() < paddle_p2.ycor() + 40 and ball.ycor() > paddle_p2.ycor() - 40):
       ball.setx(340)
       ball.dx *= -1
       os.system("aplay blip.wav&")
