@@ -16,10 +16,14 @@ font_size  = 24
 font_style = "normal"
 
 p1_xcor = -350
-p2_xcor = 350
+p2_xcor =  350
 
 # number of pixels to shift paddle by
 paddle_shift = 20
+
+# number of pixels to shift ball by
+ball_shift_x =  0.10
+ball_shift_y = -0.10
 
 window = turtle.Screen()
 window.title = ("Pong by @TokyoEdTech")
@@ -64,8 +68,8 @@ ball.penup()
 # center of screen
 ball.goto(0, 0)
 # move ball by n pixels
-ball.dx = 0.10
-ball.dy = -0.10
+ball.dx = ball_shift_x 
+ball.dy = ball_shift_y
 # END Ball
 
 # START Pen
