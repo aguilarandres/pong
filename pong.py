@@ -133,20 +133,21 @@ while True:
 
   # border checking
 
-  # top border
+  # top border y-axis
   if ball.ycor() > 290:
     ball.sety(290)
     # reverse direction of movement
     ball.dy *= -1
     os.system("aplay blip.wav&")
 
-  # bottom border
+  # bottom border y-axis
   if ball.ycor() < -290:
     ball.sety(-290)
     ball.dy *= -1
     os.system("aplay blip.wav&")
 
   # confirm that ball is off screen
+  # Player 1 edge; right hand side; x-axis
   if ball.xcor() > 390:
       # set ball x, y coordinates to zero to restart game
     ball.goto(0, 0)
@@ -155,7 +156,7 @@ while True:
     pen.clear()
     pen.write("Player 1: {} | Player 2: {}".format(score_p1, score_p2), \
         align="center", font=(font_type, font_size, font_style))
-
+  # Player 2 edge; left hand side; x-axis
   if ball.xcor() < -390:
     ball.goto(0, 0)
     ball.dx *= -1
