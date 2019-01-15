@@ -22,8 +22,8 @@ p2_xcor =  350
 paddle_shift = 20
 
 # number of pixels to shift ball by
-ball_shift_x =  0.10
-ball_shift_y = -0.10
+ball_shift_x =  0.20
+ball_shift_y = -0.20
 
 window = turtle.Screen()
 window.title = ("Pong by @TokyoEdTech")
@@ -80,7 +80,7 @@ pen.penup()
 # hide turtle so only written text is displayed
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Player 1: {} | Player 2: {}".format(score_p1, score_p2), \
+pen.write("Player 1: {}   Player 2: {}".format(score_p1, score_p2), \
     align="center", font=(font_type, font_size, font_style))
 
 # END Pen
@@ -154,7 +154,7 @@ while True:
     ball.dx *= -1
     score_p1 += 1
     pen.clear()
-    pen.write("Player 1: {} | Player 2: {}".format(score_p1, score_p2), \
+    pen.write("Player 1: {}   Player 2: {}".format(score_p1, score_p2), \
         align="center", font=(font_type, font_size, font_style))
   # Player 2 edge; left hand side; x-axis
   if ball.xcor() < -390:
@@ -162,7 +162,7 @@ while True:
     ball.dx *= -1
     score_p2 +=1
     pen.clear()
-    pen.write("Player 1: {} | Player 2: {}".format(score_p1, score_p2), \
+    pen.write("Player 1: {}   Player 2: {}".format(score_p1, score_p2), \
         align="center", font=(font_type, font_size, font_style))
 
 
