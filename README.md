@@ -8,4 +8,4 @@ Requires Tkinter to run; which can be installed with the command: sudo apt-get i
 
 Execute the command python3 pong.py in the terminal to play
 
-Video Tutorial Resource: [Python Game Tutorial: Pong] (https://www.google.com/search?q=python+pong+tutorial&oq=python+pong+tutorial&aqs=chrome..69i57j0l3.2371j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_g-XNXtTlOs_f-gSfp4KoDg48)
+Video Tutorial Resource: [Python Game Tutorial: Pong](https://www.google.com/search?q=python+pong+tutorial&oq=python+pong+tutorial&aqs=chrome..69i57j0l3.2371j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_g-XNXtTlOs_f-gSfp4KoDg48)
