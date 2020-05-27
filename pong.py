@@ -3,7 +3,6 @@
 
 # Turtle graphics for Tkinter (Tk)
 import turtle
-import os
 
 window_width  = 800
 window_height = 600
@@ -138,13 +137,11 @@ while True:
     ball.sety(290)
     # reverse direction of movement
     ball.dy *= -1
-    os.system("aplay blip.wav&")
 
   # bottom border y-axis
   if ball.ycor() < -290:
     ball.sety(-290)
     ball.dy *= -1
-    os.system("aplay blip.wav&")
 
   # confirm that ball is off screen
   # Player 1 edge; right hand side; x-axis
@@ -173,10 +170,8 @@ while True:
   (ball.ycor() < paddle_p1.ycor() + 40 and ball.ycor() > paddle_p1.ycor() - 40):
       ball.setx(-340)
       ball.dx *= -1
-      os.system("aplay blip.wav&")
   # Paddle P2
   if (ball.xcor() > 340 and ball.xcor() < p2_xcor) and \
   (ball.ycor() < paddle_p2.ycor() + 40 and ball.ycor() > paddle_p2.ycor() - 40):
       ball.setx(340)
       ball.dx *= -1
-      os.system("aplay blip.wav&")
